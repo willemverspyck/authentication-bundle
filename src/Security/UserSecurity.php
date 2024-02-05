@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Spyck\AuthenticationBundle\Provider;
+namespace Spyck\AuthenticationBundle\Security;
 
 use Exception;
 use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
 use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthAwareUserProviderInterface;
 use Spyck\AuthenticationBundle\Entity\ModuleInterface;
+use Spyck\AuthenticationBundle\Provider\ProviderInterface;
 use Spyck\AuthenticationBundle\Service\ModuleService;
 use Spyck\AuthenticationBundle\Service\ProviderService;
-use Symfony\Component\DependencyInjection\Attribute\TaggedIterator;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-final readonly class UserProvider implements OAuthAwareUserProviderInterface
+final readonly class UserSecurity implements OAuthAwareUserProviderInterface
 {
     public function __construct(private AuthorizationCheckerInterface $authorizationChecker, private ModuleService $moduleService, private ProviderService $providerService, private TokenStorageInterface $tokenStorage)
     {
@@ -46,6 +46,9 @@ final readonly class UserProvider implements OAuthAwareUserProviderInterface
         throw new Exception('Provider not found');
     }
 
+    /**
+     * @throws Exception
+     */
     private function getModule(ProviderInterface $provider): ?ModuleInterface
     {
         $module = $this->moduleService->getModule($provider);
