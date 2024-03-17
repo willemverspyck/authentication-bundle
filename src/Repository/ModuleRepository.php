@@ -6,7 +6,6 @@ namespace Spyck\AuthenticationBundle\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
-use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 use Spyck\AuthenticationBundle\Entity\ModuleInterface;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;

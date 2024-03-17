@@ -4,15 +4,11 @@ declare(strict_types=1);
 
 namespace Spyck\AuthenticationBundle\Provider;
 
-use Exception;
 use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
-use Spyck\AuthenticationBundle\Service\ModuleService;
 use Spyck\AuthenticationBundle\Entity\ModuleInterface;
 use Spyck\AuthenticationBundle\Repository\ModuleRepository;
+use Spyck\AuthenticationBundle\Service\ModuleService;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
-use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
-use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
 use Symfony\Contracts\Service\Attribute\Required;
 use Symfony\Polyfill\Intl\Icu\Exception\MethodNotImplementedException;
 

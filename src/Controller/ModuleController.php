@@ -4,16 +4,13 @@ declare(strict_types=1);
 
 namespace Spyck\AuthenticationBundle\Controller;
 
-use Spyck\AuthenticationBundle\Model\Session;
 use Spyck\AuthenticationBundle\Repository\ModuleRepository;
 use Spyck\AuthenticationBundle\Service\ModuleService;
-use Spyck\AuthenticationBundle\Service\SessionService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Requirement\Requirement;
-use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[AsController]
 final class ModuleController extends AbstractController
