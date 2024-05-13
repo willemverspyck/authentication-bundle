@@ -32,7 +32,7 @@ class ModuleRepository extends ServiceEntityRepository
     public function patchModule(ModuleInterface $module, array $fields, array $parameters): void
     {
         if (in_array('parameters', $fields, true)) {
-            $module->setParameter($parameters);
+            $module->setParameters($parameters);
         }
 
         $this->getEntityManager()->persist($module);
