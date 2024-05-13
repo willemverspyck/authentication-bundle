@@ -31,7 +31,7 @@ class ModuleRepository extends ServiceEntityRepository
 
     public function patchModule(ModuleInterface $module, array $fields, array $parameters): void
     {
-        if (array_key_exists('parameters', $fields)) {
+        if (in_array('parameters', $fields, true)) {
             $module->setParameter($parameters);
         }
 
