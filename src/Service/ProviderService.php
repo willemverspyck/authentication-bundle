@@ -8,14 +8,14 @@ use Countable;
 use Exception;
 use IteratorAggregate;
 use Spyck\AuthenticationBundle\Provider\ProviderInterface;
-use Symfony\Component\DependencyInjection\Attribute\TaggedIterator;
+use Symfony\Component\DependencyInjection\Attribute\AutowireIterator;
 
 readonly class ProviderService
 {
     /**
      * @param Countable&IteratorAggregate $providers
      */
-    public function __construct(#[TaggedIterator(tag: 'spyck.authentication.provider', defaultIndexMethod: 'getName')] private iterable $providers)
+    public function __construct(#[AutowireIterator(tag: 'spyck.authentication.provider', defaultIndexMethod: 'getName')] private iterable $providers)
     {
     }
 
