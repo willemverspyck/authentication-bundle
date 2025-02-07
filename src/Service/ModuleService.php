@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class ModuleService
 {
-    private const KEY = 'spyck:authentication';
+    private const string KEY = 'spyck:authentication';
 
     public function __construct(private readonly ModuleRepository $moduleRepository, private readonly RequestStack $requestStack)
     {
