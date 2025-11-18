@@ -18,22 +18,22 @@
     "homepage": "https://github.com/willemverspyck/authentication-bundle",
     "type": "library",
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "doctrine/collections": "^2",
         "hwi/oauth-bundle": "^2",
-        "symfony/config": "^6|^7",
-        "symfony/dependency-injection": "^6|^7",
-        "symfony/framework-bundle": "^6|^7",
-        "symfony/http-foundation": "^6|^7",
-        "symfony/http-kernel": "^6|^7",
+        "symfony/config": "^6|^7|^8",
+        "symfony/dependency-injection": "^6|^7|^8",
+        "symfony/framework-bundle": "^6|^7|^8",
+        "symfony/http-foundation": "^6|^7|^8",
+        "symfony/http-kernel": "^6|^7|^8",
         "symfony/polyfill-intl-icu": "^1",
-        "symfony/routing": "^6|^7",
-        "symfony/security-core": "^6|^7"
+        "symfony/routing": "^6|^7|^8",
+        "symfony/security-core": "^6|^|^8"
     },
     "require-dev": {
         "escapestudios/symfony2-coding-standard": "^3",
         "friendsofphp/php-cs-fixer": "^3",
-        "phpunit/phpunit": "^10",
+        "phpunit/phpunit": "^12",
         "squizlabs/php_codesniffer": "^3"
     },
     "autoload": {
