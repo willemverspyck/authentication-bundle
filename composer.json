@@ -28,7 +28,7 @@
         "symfony/http-kernel": "^6|^7|^8",
         "symfony/polyfill-intl-icu": "^1",
         "symfony/routing": "^6|^7|^8",
-        "symfony/security-core": "^6|^|^8"
+        "symfony/security-core": "^6|^7|^8"
     },
     "require-dev": {
         "escapestudios/symfony2-coding-standard": "^3",
