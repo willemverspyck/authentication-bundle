@@ -19,7 +19,7 @@
     "type": "library",
     "require": {
         "php": "^8.3",
-        "doctrine/collections": "^2",
+        "doctrine/collections": "^2|^3",
         "hwi/oauth-bundle": "^2",
         "symfony/config": "^6|^7|^8",
         "symfony/dependency-injection": "^6|^7|^8",
