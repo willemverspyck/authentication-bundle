@@ -10,12 +10,26 @@ use Symfony\Component\DependencyInjection\ServiceLocator;
 
 readonly class ProviderService
 {
-    public function __construct(#[AutowireLocator(services: 'spyck.authentication.provider', defaultIndexMethod: 'getName')] private ServiceLocator $serviceLocator)
+    public function __construct(#[AutowireLocator(services: 'spyck.authentication.provider')] private ServiceLocator $serviceLocator)
     {
     }
 
-    public function getProvider(string $name): ProviderInterface
+    public function getProvider(string $code): ProviderInterface
     {
-        return $this->serviceLocator->get($name);
+        $provider = array_find($this->getProviders(), fn (ProviderInterface $provider) => $provider->getName() === $code);
+
+        if (null === $provider) {
+            throw new Exception(sprintf('Provider "%s" not found', $code));
+        }
+
+        return $provider;
+    }
+
+    /**
+     * @return array<string, ProviderInterface>
+     */
+    private function getProviders(): array
+    {
+        return iterator_to_array($this->serviceLocator->getIterator());
     }
 }

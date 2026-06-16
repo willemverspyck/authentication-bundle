@@ -12,7 +12,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[Autoconfigure(tags: ['spyck.authentication.provider'])]
 interface ProviderInterface
 {
-    public static function getName(): string;
+    public static function getCode(): string;
 
     public function isLogin(): bool;
 
