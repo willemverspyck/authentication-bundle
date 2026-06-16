@@ -6,10 +6,10 @@ namespace Spyck\AuthenticationBundle\Model;
 
 use Spyck\AuthenticationBundle\Entity\ModuleInterface;
 
-final class Session
+final class State
 {
     private ModuleInterface $module;
-    private string $name;
+    private string $code;
 
     public function setModule(ModuleInterface $module): self
     {
@@ -23,15 +23,15 @@ final class Session
         return $this->module;
     }
 
-    public function setName(string $name): self
+    public function setCode(string $code): self
     {
-        $this->name = $name;
+        $this->code = $code;
 
         return $this;
     }
 
-    public function getName(): string
+    public function getCode(): string
     {
-        return $this->name;
+        return $this->code;
     }
 }
