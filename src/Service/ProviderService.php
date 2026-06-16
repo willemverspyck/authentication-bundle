@@ -16,7 +16,7 @@ readonly class ProviderService
 
     public function getProvider(string $code): ProviderInterface
     {
-        $provider = array_find($this->getProviders(), fn (ProviderInterface $provider) => $provider->getName() === $code);
+        $provider = array_find($this->getProviders(), fn (ProviderInterface $provider) => $provider->getCode() === $code);
 
         if (null === $provider) {
             throw new Exception(sprintf('Provider "%s" not found', $code));
